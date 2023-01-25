@@ -6,7 +6,7 @@ import { IVinSearchPageProps } from "../interface";
 
 const VinSearch: React.FunctionComponent<IVinSearchPageProps> = (props) => {
   const { vehicleSelection } = props;
-  console.log(vehicleSelection)
+  console.log(vehicleSelection);
   const navigate = useNavigate();
   const length: boolean =
     vehicleSelection.rows?.length > 0 && vehicleSelection.columns?.length > 0;
@@ -16,10 +16,12 @@ const VinSearch: React.FunctionComponent<IVinSearchPageProps> = (props) => {
       <Title>
         {length ? "This is what we found!" : "Please go to homepage to search"}
       </Title>
-      {!length && linkLength && <Error>We were not able to find something with that VIN Number</Error>}
-      
-        <BackButton onClick={() => navigate("/")}>Back to home page</BackButton>
-      
+      {!length && linkLength && (
+        <Error>We were not able to find something with that VIN Number</Error>
+      )}
+
+      <BackButton onClick={() => navigate("/")}>Back to home page</BackButton>
+
       {length && (
         <SortableTable
           rows={[vehicleSelection.rows]}

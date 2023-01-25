@@ -6,7 +6,6 @@ import { IApplicationProps } from "./interface";
 
 const App: React.FunctionComponent<IApplicationProps> = () => {
   const [vehicleSelection, setVehicleSelection] = useState<any>([]);
-  
 
   // Callback function to consume the name from the child component
   const nameSelection = (vehicles: any): void => {
